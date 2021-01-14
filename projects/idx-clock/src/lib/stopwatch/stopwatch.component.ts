@@ -20,7 +20,9 @@ export class StopwatchComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.changeTime.emit(`${this.hours}:${this.minutes}:${this.seconds}.${this.miliseconds}`);
+    setTimeout(() => {
+      this.changeTime.emit(`${this.hours}:${this.minutes}:${this.seconds}.${this.miliseconds}`);
+    }, 0);
   }
 
   initInterval():void {
@@ -88,5 +90,6 @@ export class StopwatchComponent implements OnInit {
   restartStopwatch():void {
     this.status = 'initial';
     this.hours = this.minutes = this.seconds = this.miliseconds = 0;
+    this.changeTime.emit(`${this.hours}:${this.minutes}:${this.seconds}.${this.miliseconds}`);
   }
 }

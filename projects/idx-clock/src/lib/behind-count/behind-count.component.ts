@@ -19,7 +19,9 @@ export class BehindCountComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void { 
-    this.changeTime.emit(`${this.hours}:${this.minutes}:${this.seconds}`);
+    setTimeout(() => {
+      this.changeTime.emit(`${this.hours}:${this.minutes}:${this.seconds}`);
+    }, 0);
   }
 
   initInterval(){
@@ -80,6 +82,7 @@ export class BehindCountComponent implements OnInit {
   restartBehindcount():void {
     this.status = 'initial';
     this.hours = this.minutes = this.seconds = 0;
+    this.changeTime.emit(`${this.hours}:${this.minutes}:${this.seconds}`);
   }
 
   handleUnit(unitType: string, operation: string): void{

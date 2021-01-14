@@ -1,6 +1,6 @@
 {
-  "name": "idx-clock",
-  "version": "0.1.0",
+  "name": "@g1770ny/idx-clock",
+  "version": "1.0.1",
   "peerDependencies": {
     "@angular/common": "^10.0.14",
     "@angular/core": "^10.0.14"
