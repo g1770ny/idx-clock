@@ -12,6 +12,12 @@
     },
     {
       "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/idx-clock/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/idx-clock/tsconfig.spec.json"
     }
 ]
 }

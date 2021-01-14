@@ -1,0 +1,30 @@
+<div class="container-stopwatch">
+    <div>{{str_hours}}</div>
+    <div>:</div>
+    <div>{{str_minutes}}</div>
+    <div>:</div>
+    <div>{{str_seconds}}</div>
+    <div>.</div>
+    <div class="seconds-stopwatch">{{str_miliseconds}}</div>
+</div>
+<div>
+    <button *ngIf="status == 'initial' || status == 'stoped'" 
+            (click)="startStopwatch()"
+            class="button-stopwatch"
+            [ngStyle]="{'width': (status == 'initial' ? '100%' : '50%')}">
+        {{status == 'initial' ? 'INICIO' : 'REANUDAR'}}
+    </button>
+    <button *ngIf="status == 'stoped'" 
+            (click)="restartStopwatch()"
+            class="button-stopwatch"
+            [ngStyle]="{'width': '50%'}">
+        RESTABLECER
+    </button>
+    <button *ngIf="status == 'started'" 
+            (click)="stopStopwatch()"
+            class="button-stopwatch"
+            [ngStyle]="{'width': '100%'}">
+        DETENER
+    </button>
+    
+</div>

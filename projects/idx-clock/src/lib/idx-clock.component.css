@@ -1,0 +1,11 @@
+.lib-container {
+    min-width: 25em;
+}
+
+.button-menu {
+    width: 33.33%;
+    height: 2.5em;
+    border-radius: 0%;
+    border-width: 1px;
+    border-bottom: 0px;
+}

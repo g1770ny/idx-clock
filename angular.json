@@ -123,6 +123,46 @@
           }
         }
       }
+    },
+    "idx-clock": {
+      "projectType": "library",
+      "root": "projects/idx-clock",
+      "sourceRoot": "projects/idx-clock/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/idx-clock/tsconfig.lib.json",
+            "project": "projects/idx-clock/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/idx-clock/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/idx-clock/src/test.ts",
+            "tsConfig": "projects/idx-clock/tsconfig.spec.json",
+            "karmaConfig": "projects/idx-clock/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/idx-clock/tsconfig.lib.json",
+              "projects/idx-clock/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "templateProject"
 }

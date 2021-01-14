@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+.container-clock {
+    display: grid;
+    grid-template-columns: 1.7em 0.5em 1.7em 0.5em 1.7em 1em;
+    text-align: center;
+    align-items: baseline;
+    font-size: 50px;
+    font-family: "Orbitron";
+    border-width: 2px;
+    border-color: black;
+    border-radius: 2%;
+    background-color: aqua;
+    border-style: solid;
+    padding: 0.3em;
+}
+
+.am-pm-clock {
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}

@@ -1,0 +1,51 @@
+<div class="container-behindcount"
+     [ngStyle]="{'background-color': (finished ? 'red' : 'aqua')}">
+    <div class="unit-buttons">
+        <label *ngIf="status != 'initial'" class="unit-text">Horas</label>
+        <button *ngIf="status == 'initial'" class="unit-btn" (click)="handleUnit('hours', '+')">+</button>
+        <div>{{str_hours}}</div>
+        <button *ngIf="status == 'initial'" class="unit-btn" (click)="handleUnit('hours', '-')">-</button>
+    </div>
+    <div class="separator">:</div>
+    <div class="unit-buttons">
+        <label *ngIf="status != 'initial'" class="unit-text">Minutos</label>
+        <button *ngIf="status == 'initial'" class="unit-btn" (click)="handleUnit('minutes', '+')">+</button>
+        <div>{{str_minutes}}</div>
+        <button *ngIf="status == 'initial'" class="unit-btn" (click)="handleUnit('minutes', '-')">-</button>
+    </div>
+    <div class="separator">:</div>
+    <div class="unit-buttons">
+        <label *ngIf="status != 'initial'" class="unit-text">Segundos</label>
+        <button *ngIf="status == 'initial'" class="unit-btn" (click)="handleUnit('seconds', '+')">+</button>
+        <div>{{str_seconds}}</div>
+        <button *ngIf="status == 'initial'" class="unit-btn" (click)="handleUnit('seconds', '-')">-</button>
+    </div>
+</div>
+<div>
+    <button *ngIf="status == 'initial' || status == 'stoped'" 
+            (click)="startBehindcount()"
+            [disabled]="hours == 0 && minutes == 0 && seconds == 0"
+            class="button-behindcount"
+            [ngStyle]="{'width': (status == 'initial' ? '100%' : '50%')}">
+        {{status == 'initial' ? 'INICIO' : 'REANUDAR'}}
+    </button>
+    <button *ngIf="status == 'stoped'" 
+            (click)="restartBehindcount()"
+            class="button-behindcount"
+            [ngStyle]="{'width': '50%'}">
+        RESTABLECER
+    </button>
+    <button *ngIf="status == 'started' && !finished" 
+            (click)="stopBehindcount()"
+            class="button-behindcount"
+            [ngStyle]="{'width': '100%'}">
+        DETENER
+    </button>
+    <button *ngIf="finished" 
+            (click)="restartBehindcount()"
+            class="button-behindcount"
+            [ngStyle]="{'width': '100%'}">
+        TIEMPO FINALIZADO - REINICIAR
+    </button>
+</div>
+
